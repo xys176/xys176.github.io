@@ -23,25 +23,6 @@
     
     
     <entry>
-      <title>this</title>
-      <link href="/2020/04/10/this/"/>
-      <url>/2020/04/10/this/</url>
-      
-        <content type="html"><![CDATA[<p>this�ؼ���ͨ��������ڹ��캯����</p><a id="more"></a><h2 id="this�ؼ���ͨ��������ڹ��캯����"><a href="#this�ؼ���ͨ��������ڹ��캯����" class="headerlink" title="this�ؼ���ͨ��������ڹ��캯����"></a>this�ؼ���ͨ��������ڹ��캯����</h2><p>���磺�����µļ������캯��</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public student()&#123;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">this.stuNo&#x3D;stuNo;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo,int age)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">this.stuNo&#x3D;stuNo;</span><br><span class="line">this.age&#x3D;age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>this�������������ǵ�ǰ�����µĲ�����<br><br>��������д�������ص��Ĳ��֣���˿��������Ľ���</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public student()&#123;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo)&#123;</span><br><span class="line">this��name);</span><br><span class="line">this.stuNo&#x3D;stuNo;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo,int age)&#123;</span><br><span class="line">this(name,stuNo);</span><br><span class="line">this.age&#x3D;age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>���캯�����ֵ��ñ�Ĺ��캯��������ͼ��١�ʹ�ø����Ż���<br><br>����ܶ๹�캯�������ܻ�������ص����⡣<br><br>���磺<br>�����ټ���һ�����캯��</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public student(String pickname)&#123;</span><br><span class="line">    this.pickname&#x3D;pickname;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>�����ͻ�������ء���Ϊǰ��Ĵ������Ѿ�����һ��String���͵Ĺ��캯�����ٶ���һ���ͻ��޷�ʶ��Ҫ���������һ����<br>�������ǿ��Թ���һ��int�͵ģ��Ͳ���������⡣<br><br>���磺</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public student(int age)&#123;</span><br><span class="line">    this.age&#x3D;age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>01背包问题建表方法</title>
       <link href="/2020/04/07/01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%BB%BA%E8%A1%A8%E6%96%B9%E6%B3%95/"/>
       <url>/2020/04/07/01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%BB%BA%E8%A1%A8%E6%96%B9%E6%B3%95/</url>
