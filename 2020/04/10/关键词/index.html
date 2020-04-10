@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：数据库 - Hexo</title>
+    <title>关键词 - Hexo</title>
   
+    <meta name="keywords" content="java">
+  
+  
+    <meta name="description" content="this关键词通常会出现在构造函数中">
   
 
   <!-- feed -->
@@ -363,25 +365,12 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -390,11 +379,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2020/04/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E8%8C%83%E5%8C%96/">
-      数据库规范化
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2020/04/10/%E5%85%B3%E9%94%AE%E8%AF%8D/">
+        关键词
+      </a>
+    </h1>
+  
 
 
       
@@ -422,14 +413,9 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年4月6日</p>
+    <p>发布于：2020年4月10日</p>
   </a>
 </div>
-
-          
-        
-          
-            
 
           
         
@@ -446,100 +432,42 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数据库的总结</p>
-      
-      
-        
-          <div class="button readmore">
-            <a href="/2020/04/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E8%8C%83%E5%8C%96/">
-              Read More <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        
-      
-    </div>
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>this关键词通常会出现在构造函数中</p>
+<a id="more"></a>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-    
-  
-</div>
-<aside class='l_side'>
-  
+<h2 id="this关键词通常会出现在构造函数中"><a href="#this关键词通常会出现在构造函数中" class="headerlink" title="this关键词通常会出现在构造函数中"></a>this关键词通常会出现在构造函数中</h2><p>例如：有如下的几个构造函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public student()&#123;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">this.stuNo&#x3D;stuNo;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo,int age)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">this.stuNo&#x3D;stuNo;</span><br><span class="line">this.age&#x3D;age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>this用来表明参数是当前方法下的参数。<br><br>但是这样写代码有重叠的部分，因此可以做出改进。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public student()&#123;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name)&#123;</span><br><span class="line">this.name&#x3D;name;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo)&#123;</span><br><span class="line">this（name);</span><br><span class="line">this.stuNo&#x3D;stuNo;</span><br><span class="line">&#125;</span><br><span class="line">public student(String name,String stuNo,int age)&#123;</span><br><span class="line">this(name,stuNo);</span><br><span class="line">this.age&#x3D;age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构造函数中又调用别的构造函数，代码就减少。使得更加优化。<br><br>定义很多构造函数，可能会造成重载的问题。<br><br>例如：<br>我们再加入一个构造函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public student(String pickname)&#123;</span><br><span class="line">    this.pickname&#x3D;pickname;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就会造成重载。因为前面的代码中已经有了一个String类型的构造函数，再定义一个就会无法识别要构造的是哪一个。<br>但是我们可以构造一个int型的，就不会出现问题。<br><br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public student(int age)&#123;</span><br><span class="line">    this.age&#x3D;age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+            <br>
+            
   
     
     
 
-<section class="widget blogger shadow desktop">
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'/>
-      </div>
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>分享博客请留言</p>
+
           
         
           
-            <a href="mailto:me@xaoxuu.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://www.xueyisheng.website/2020/04/10/%E5%85%B3%E9%94%AE%E8%AF%8D/>https://www.xueyisheng.website/2020/04/10/%E5%85%B3%E9%94%AE%E8%AF%8D/</a></p>
           
         
-          
-            <a href="https://github.com/xaoxuu"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -550,29 +478,184 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='http://q8bmdvbnl.bkt.clouddn.com/qrcode_1586052131195%281%29.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='http://q8bmdvbnl.bkt.clouddn.com/539be4b1ba768ef1cda96947b6fef87.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-10T20:44:13+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年4月10日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.xueyisheng.website/2020/04/10/%E5%85%B3%E9%94%AE%E8%AF%8D/&title=关键词 - Hexo&summary=this关键词通常会出现在构造函数中"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.xueyisheng.website/2020/04/10/%E5%85%B3%E9%94%AE%E8%AF%8D/&title=关键词 - Hexo&summary=this关键词通常会出现在构造函数中"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://www.xueyisheng.website/2020/04/10/%E5%85%B3%E9%94%AE%E8%AF%8D/&title=关键词 - Hexo&summary=this关键词通常会出现在构造函数中"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/04/10/this/'>
+                <p class='title'>this<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>this�ؼ���ͨ��������ڹ��캯����
+
+
+this�ؼ���ͨ��������ڹ��캯�������磺�����µļ������캯��
+1234567891011121314pu...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '关键词',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
   
 
   
     
     
-  
 
-  <section class="widget tagcloud shadow desktop mobile">
+
+  <section class="widget toc-wrapper shadow desktop mobile">
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/java/" style="font-size: 24px; color: #555">java</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this关键词通常会出现在构造函数中"><span class="toc-text">this关键词通常会出现在构造函数中</span></a></li></ol>
     </div>
   </section>
 
-
-  
 
   
 
