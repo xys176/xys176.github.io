@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>仓库管理</title>
+      <link href="/2020/04/23/%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86/"/>
+      <url>/2020/04/23/%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>用Git把本地仓库推送到GitHub上</p><a id="more"></a><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>1.初始化一个git仓库<br>打开要上传的文件加的根目录。</p><p>git init初始化一个git 仓库<br>点开隐藏会有一个git文件夹。<br><img src="F65A250266744CE2965DF5FD765A4CB3" alt=""><br>再git add .<br><img src="http://q8bmdvbnl.bkt.clouddn.com/git2.png" alt=""><br><img src="http://q8bmdvbnl.bkt.clouddn.com/git3.png" alt=""><br>再git commit -n ‘描述’<br><img src="http://q8bmdvbnl.bkt.clouddn.com/git4.png" alt=""><br>再关联GitHub的远程仓库<br><img src="http://q8bmdvbnl.bkt.clouddn.com/git5.png" alt=""><br>git remote add origin  <a href="mailto:git@github.com">git@github.com</a>:xys176/xys176.github.io.git<br>(仓库的SSH)<br><img src="http://q8bmdvbnl.bkt.clouddn.com/git5.png" alt="git5"><br>再git push -u origin master推送到GitHub上<br><img src="http://q8bmdvbnl.bkt.clouddn.com/git7.png" alt=""><br>到GitHub仓库查看<br><img src="http://q8bmdvbnl.bkt.clouddn.com/git8.png" alt=""><br>发现已经更新</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>继承例题</title>
       <link href="/2020/04/22/%E7%BB%A7%E6%89%BF%E4%BE%8B%E9%A2%98/"/>
       <url>/2020/04/22/%E7%BB%A7%E6%89%BF%E4%BE%8B%E9%A2%98/</url>
@@ -31,6 +50,12 @@
       
       
       
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -46,7 +71,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
