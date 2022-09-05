@@ -1,11 +1,11 @@
-title: Hexo
+title: xueyisheng's blog
 subtitle: ''
 description: ''
 keywords: null
-author: John Doe
-language: en
-timezone: ''
-url: http://example.com
+author: xueyisheng
+language: zh-CN
+timezone: 'Asia/Shanghai'
+url: http://xys173.github.io
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -61,7 +61,7 @@ exclude: null
 ignore: null
 theme: nothinglin
 deploy:
-  type: 'git'
+  type: git
   repo: git@github.com:xys176/xys176.github.io.git
-  branch: master
+  branch: gh-pages
   message: A new commit was pushed!

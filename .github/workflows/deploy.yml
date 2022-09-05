@@ -3,7 +3,7 @@ name: Hexo Deploy
 on:
   push:
     branches:
-      - master
+      - source
 
 jobs:
   build-and-deploy:
@@ -17,6 +17,19 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14'
+      
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Use yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       - name: INstall dependencies
         run: |
@@ -24,7 +37,7 @@ jobs:
 
       - name: Set up Environment
         env:
-          DEPLOY_KEY: ${{  secrets.DEPLOY_KEY }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           git config --global user.name "xys176"
           git config --global user.email "3102591761@qq.com"
