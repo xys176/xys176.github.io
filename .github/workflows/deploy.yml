@@ -1,0 +1,39 @@
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up NOde.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: INstall dependencies
+        run: |
+          yarn install --prefer-offline --frozen-lockfile
+
+      - name: Set up Environment
+        env:
+          DEPLOY_KEY: ${{  secrets.DEPLOY_KEY }}
+        run: |
+          git config --global user.name "xys176"
+          git config --global user.email "3102591761@qq.com"
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: |
+          npx hexo generate -deploy

@@ -1,0 +1,112 @@
+<!-- 文章列表 -->
+<div class="eleven wide column art-list">
+  <div class="ui segment background-thin-yellow author-index-info">
+    <a class="ui background-thin-red ribbon label font-size-15">关于博主：</a>
+
+    <div class="ui grid  stackable mobile reversed">
+      <div class="eleven wide column">
+        <!-- 介绍说明 -->
+        <div class="ui piled segment  margin-top-15 border-background-less">
+          <h4 class="ui header"><%=theme.aboutAuthor%></h4>
+          <p><%=theme.AuthorInfo%></p>
+        </div>
+      </div>
+
+      <!-- 博主头像 -->
+      <div class="five wide column">
+        <div class="ui segment border-background-less margin-top-15">
+          <div class="ui card">
+            <div class="ui slide masked reveal image padding-5">
+              <img src="<%- url_for('/img/avatar.jpg') %>" class="visible content">
+              <img src="https://NothingLin.coding.net/p/picture/d/picture/git/raw/master/2021/12/5/20211205010929.jpeg" class="hidden content">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 分割线 -->
+    <div class="ui divider title-divider"></div>
+
+    <!-- 文章信息 -->
+    <div class="row-flex-left">
+      <h4 class="header margin-15"><i class="address  book icon"></i>文章总数：<%- site.posts.length %> 篇</h4>
+      <h4 class="header margin-15"><i class="address  folder open outline icon"></i>文章分类总数：<%- site.categories.length %> 个</h4>
+      <h4 class="header margin-15"><i class="address  tags icon"></i>文章标签总数：<%- site.tags.length %> 篇</h4>
+    </div>
+  </div>
+
+
+  <% page.posts.sort('date', 'desc').each(function(post){ %>
+  <!-- 文章列表 -->
+  <div class="ui segment background-thin-yellow stackable ">
+    <!-- 文章标题 -->
+    <div class="ui segment row-flex-left margin-padding-less border-background-less">
+
+      <h3 class="ui header margin-5">
+        <a href="<%- url_for(post.path) %>">
+          <%- truncate(post.title || '该文章无标题', {length: 100, omission: '...'}) %></a>
+          <div class="ui background-thin-red label margin-5 font-white">
+            <% if(post.categories.length){ %>
+            <%- list_categories(post.categories, {
+                      show_count: false,
+                      style: 'none',
+                      separator: ' ',
+                      amount: 1
+                  }) %>
+            <% } else { %>
+            <%= '未分类' %>
+            <% } %>
+          </div>
+      </h3>
+    </div>
+    <!-- 文章内容简介 -->
+    <div class="ui grid  stackable">
+      <!-- 缩略图 -->
+      <div class="five wide column">
+        <div class="ui card margin-10">
+          <div class="image">
+            <img class="ui small image" src="<%- url_for('/img/default.png') %>">
+          </div>
+        </div>
+      </div>
+      <!-- 内容简介 -->
+      <div class="eleven wide column">
+        <div class="ui piled segment border-background-less intro">
+          <a href="<%- url_for(post.path) %>">
+            <p><%- truncate(strip_html(post.content),{length: 210,omission: '...'}) %>...</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- 分割线 -->
+    <div class="ui divider title-divider"></div>
+    <!-- 文章info -->
+    <div class="row-flex-left">
+      <h5 class="header margin-left-right-10"><i class="address user icon"></i><%- post.author -%></h5>
+      <h5 class="header margin-left-right-10"><i class="address  calendar alternate outline icon"></i><%- date(post.date,"YYYY年MM月DD日") %></h5>
+      <h5 class="header margin-left-right-10"><i class="address  tag icon"></i>
+        <% if(post.categories.length){ %>
+        <%- list_tags(post.tags, {
+      										show_count: false,
+      										style: 'none',
+      										separator: ' ， ',
+      										amount: 3
+      								}) %>
+        <% } else { %>
+        <%= '空' %>
+        <% } %></h5>
+    </div>
+  </div>
+  <% }) %>
+
+  <% if (page.total > 1){ %>
+  <!-- 分页菜单 -->
+  <div class="ui borderless menu background-thin-yellow" role="navigation">
+    <%- paginator({
+                prev_text: "上一页",
+                next_text: "下一页"
+            }) %>
+  </div>
+
+  <% } %>
+</div>

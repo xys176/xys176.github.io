@@ -1,0 +1,46 @@
+<%- partial('_partial/head') %>
+
+<body>
+  <%- partial('_partial/header') %>
+  <%- partial('_partial/nav') %>
+  <!-- 文章主体布局 -->
+  <div class="ui container margin-top-30">
+    <div class="ui grid stackable">
+      <%- body %>
+      <%- partial('_partial/sidebar') %>
+    </div>
+  </div>
+  <%- partial('_partial/footer') %>
+  <!-- gototop按钮 -->
+  <button class="gototop"><i class="arrow alternate circle up outline icon big font-thin-yellow"></i></button>
+  <!-- semantic ui js资源 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <%- partial('_partial/scripts/showmore') %>
+  <%- partial('_partial/scripts/enlighter') %>
+  <%- partial('_partial/scripts/echarts') %>
+  <%- partial('_partial/scripts/gototop') %>
+  <%- partial('_partial/scripts/search') %>
+  <%- partial('_partial/scripts/navActive') %>
+  <%- partial('_partial/scripts/tabActive') %>
+  <%- partial('_partial/scripts/catalog') %>
+  <%- partial('_partial/scripts/mobileMenuButton') %>
+  <%- partial('_partial/scripts/handerShare') %>
+  <%- partial('_partial/scripts/fancybox') %>
+  <!-- 朋友圈功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <%- js('js/request.js') %>
+
+  <% if (theme.tidio.enable){ %>
+  <script src="https://code.tidio.co/hk48rdop6yczga3mpktspvcwes4taqbz.js" async></script>
+  <% } %>
+
+  <% if (theme.tawk.enable){ %>
+  <%- partial('_partial/scripts/tawk') %>
+  <% } %>
+
+  <%- js('js/countdown.js') %>
+
+</body>
+
+</html>

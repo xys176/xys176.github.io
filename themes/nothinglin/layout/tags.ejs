@@ -1,0 +1,81 @@
+<!-- 文章列表 -->
+<div class="eleven wide column">
+  <div class="ui segment background-thin-yellow">
+    <!-- 标签栏 -->
+    <div class="row-flex flex-wrap tag2-lists">
+      <a href="/tags/" class="tabs-nav">全部</a>
+      <% site.tags.each(function(item) { %>
+      <a href="<%- url_for(item.path) %>" class="tabs-nav"><%=item.name%> (<%=item.length%>)</a>
+      <% }) %>
+      <a class="tabs-nav" id="tag2-next"><i class="angle double right icon"></i>展开更多</a>
+    </div>
+  </div>
+
+
+  <% site.tags.each(function(item){ %>
+  <% item.posts.each(function(e) { %>
+  <!-- 列表栏 -->
+  <!-- 文章列表 -->
+  <div class="ui segment background-thin-yellow">
+    <!-- 文章标题 -->
+    <div class="ui segment row-flex-left margin-padding-less border-background-less">
+
+      <h3 class="ui header margin-5">
+        <a href="<%- url_for(e.path) %>">
+          <%- truncate(e.title || '该文章无标题', {length: 27, omission: '...'}) %></a>
+      </h3>
+
+      <div class="ui background-thin-red label margin-5 font-white">
+        <% if(e.categories.length){ %>
+        <%- list_categories(e.categories, {
+                  show_count: false,
+                  style: 'none',
+                  separator: ' ',
+                  amount: 1
+              }) %>
+        <% } else { %>
+        <%= '未分类' %>
+        <% } %>
+      </div>
+    </div>
+    <!-- 文章内容简介 -->
+    <div class="ui grid  stackable">
+      <!-- 缩略图 -->
+      <div class="five wide column">
+        <div class="ui card margin-10">
+          <div class="image">
+            <img class="ui small image" src="<%- url_for('/img/default.png') %>">
+          </div>
+        </div>
+      </div>
+      <!-- 内容简介 -->
+      <div class="eleven wide column">
+        <div class="ui piled segment border-background-less intro">
+          <a href="<%- url_for(e.path) %>">
+            <p><%- truncate(strip_html(e.content),{length: 210,omission: '...'}) %>...</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- 分割线 -->
+    <div class="ui divider title-divider"></div>
+    <!-- 文章info -->
+    <div class="row-flex-left">
+      <h5 class="header margin-left-right-10"><i class="address user icon"></i><%- e.author -%></h5>
+      <h5 class="header margin-left-right-10"><i class="address  calendar alternate outline icon"></i><%- date(e.date,"YYYY年MM月DD日") %></h5>
+      <h5 class="header margin-left-right-10"><i class="address  tag icon"></i>
+        <% if(e.tags.length){ %>
+        <%- list_tags(e.tags, {
+                          show_count: false,
+                          style: 'none',
+                          separator: ' ， ',
+                          amount: 3
+                      }) %>
+        <% } else { %>
+        <%= '空' %>
+        <% } %></h5>
+    </div>
+  </div>
+  <% }) %>
+  <% }) %>
+</div>
