@@ -39,20 +39,20 @@ chatra:
 
 # 博客brand设置
 blogTitle:
-  bigtitle: "Nothinglin的个人博客"
+  bigtitle: "屹清纪"
   subtitle: "不积跬步无以至千里，后继才能薄发"
 
 # 个人信息介绍栏
-aboutAuthor: "NothingLin的个人简介"
-AuthorInfo: "我是Nothinglin，目前还只是一名大三的学生，对未来充满了迷茫，不知所措。希望通过写博客的方式宣泄一下内心的迷茫。"
+aboutAuthor: "XueYisheng的个人简介"
+AuthorInfo: "记录不是无效的"
 
 # share
 shareHref:
   wechat: https://cdn.staticaly.com/gh/xys176/image-hosting@master/1c91c96cff234821b0335dfd7f08eb5.bx0v5d7rqu8.webp
   public: /img/subscribe.jpg
-  zhihu: https://www.zhihu.com/people/nothing-86-28-47
-  jianshu: https://www.jianshu.com/u/a47e6b0d2a32
-  github: https://github.com/Nothing-lin
+  zhihu: https://cdn.staticaly.com/gh/xys176/image-hosting@master/efd46100b0856d0667e71e2c551fd3c.1ycidoix7iv4.webp
+  jianshu: https://www.jianshu.com/u/963e6a0b814e
+  github: https://github.com/xys176
   weibo:
   rss:
 
