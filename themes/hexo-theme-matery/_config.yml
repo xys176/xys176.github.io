@@ -133,7 +133,7 @@ indexbtn:
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
   github:  https://github.com/blinkfox
-  email: 1181062873@qq.com
+  email: 3102591761@qq.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
   qq: 1181062873
@@ -162,8 +162,8 @@ code:
 reward:
   enable: true
   title: 你的赏识是我前进的动力
-  wechat: /medias/reward/wechat.png
-  alipay: /medias/reward/alipay.jpg
+  wechat: https://cdn.staticaly.com/gh/xys176/image-hosting@master/QQ截图20220906112515.6deonecvgs00.webp
+  alipay: https://cdn.staticaly.com/gh/xys176/image-hosting@master/支付宝收款.1byacbtymlts.webp
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
