@@ -59,8 +59,8 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: fluid
-deploy:
+theme: 
+deploy:matery
   type: git
   repo: git@github.com:xys176/xys176.github.io.git
   branch: gh-pages
