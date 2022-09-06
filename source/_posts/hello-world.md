@@ -31,4 +31,5 @@ tags:
 &ensp;&ensp;凡此种种，顿首以谢。 <br>
 &ensp;&ensp;即日，壬寅佳岁，午月下旬。 <br>
 
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+https://git.poker/xys176/image-hosting/blob/master/致谢.dgczlrley28.webp?raw=true
+https://git.poker/xys176/image-hosting/blob/master/致谢.dgczlrley28.webp?raw=true
