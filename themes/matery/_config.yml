@@ -561,7 +561,7 @@ addthis:
 # 如果有符号 ‘ ，请在 ’ 前面加上 \
 subtitle:
   enable: true
-  loop: true # 是否循环
+  loop: false # 是否循环
   showCursor: true # 是否显示光标
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
