@@ -13,7 +13,7 @@ mathjax: false
 summary: 骊山北麓，芷阳湖畔，屹此吾校，鳞次栉比，碧瓦朱甍，气贯长虹；
 何其所幸，拜学于此，星霜荏苒，方适四载，壬寅盛夏，迟迟吾行；
 前尘影事，良师诤友，温澜潮生，铭感五内，一夕千念，报本反始；
-categories: 随笔
+categories: Markdown
 tags:
   - Typora
   - Markdown
