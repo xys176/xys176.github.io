@@ -562,7 +562,7 @@ addthis:
 subtitle:
   enable: true
   loop: false # 是否循环
-  showCursor: true # 是否显示光标
+  showCursor: false # 是否显示光标
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
