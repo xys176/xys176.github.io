@@ -604,7 +604,8 @@ jsDelivr:
 # 网站背景图
 background:
   enable: false
-  url: "https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg"
+  url: "https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp"
+  
 
 # 说说 https://artitalk.js.org/
 artitalk:
