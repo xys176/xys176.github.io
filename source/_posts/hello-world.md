@@ -15,7 +15,7 @@ summary: 骊山北麓，芷阳湖畔，屹此吾校，鳞次栉比，碧瓦朱�
 前尘影事，良师诤友，温澜潮生，铭感五内，一夕千念，报本反始；
 categories: 随笔
 tags:
-  - 日常
+  - Typora
   - Markdown
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
