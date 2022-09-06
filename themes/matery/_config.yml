@@ -603,7 +603,7 @@ jsDelivr:
   
 # 网站背景图
 background:
-  enable: false
+  enable: true
   url: "https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp"
   
 
