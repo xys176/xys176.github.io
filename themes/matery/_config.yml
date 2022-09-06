@@ -228,7 +228,6 @@ myProjects:
         iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
         url: https://github.com/xys176/CS-Notes
         desc: C++学习指南，包括算法，操作系统，网络，数据库等
-    
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
@@ -284,7 +283,7 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: ture
+  enable: false
   owner:
   repo:
   oauth:
@@ -295,7 +294,7 @@ gitalk:
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
-  enable: true
+  enable: false
   owner:
   repo:
   oauth:
@@ -305,13 +304,13 @@ gitment:
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
 disqus:
-  enable: ture
+  enable: false
   shortname:
 
 # Livere comment configuration, the default is not activated
 # Livere 来必力评论模块的配置，默认为不激活
 livere:
-  enable: true
+  enable: false
   uid:
 
 # The configuration of the Valine comment module is not activated by default.
@@ -381,7 +380,7 @@ changyan:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/xys176
+  url: https://github.com/blinkfox/hexo-theme-matery
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
