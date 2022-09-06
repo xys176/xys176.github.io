@@ -6,7 +6,7 @@ img: https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a2
 top: true
 hide: false
 cover: true
-coverImg: /images/1.jpg
+coverImg: https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp
 password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 toc: false
 mathjax: false
