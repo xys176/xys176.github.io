@@ -1,5 +1,5 @@
 ---
-title: 致毕业
+title: 长短期记忆网络（LSTM）
 date: 2022-09-06 09:25:00
 author: XueYisheng
 img: https://cdn.staticaly.com/gh/xys176/image-hosting@master/image.5bgoyw79ji80.webp
