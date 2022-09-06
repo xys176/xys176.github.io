@@ -559,7 +559,7 @@ addthis:
 
 # 打字效果副标题.
 # 如果有符号 ‘ ，请在 ’ 前面加上 \
-subtitle:
+ShengQing's blog:
   enable: true
   loop: false # 是否循环
   showCursor: false # 是否显示光标
