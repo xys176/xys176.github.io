@@ -1,5 +1,5 @@
 ---
-title: introduction
+title: 致毕业
 date: 2022-09-06 09:25:00
 author: XueYisheng
 img: https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp
@@ -10,10 +10,12 @@ coverImg: https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84
 password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 toc: false
 mathjax: false
-summary: This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
-categories: Markdown
+summary: 骊山北麓，芷阳湖畔，屹此吾校，鳞次栉比，碧瓦朱甍，气贯长虹；
+何其所幸，拜学于此，星霜荏苒，方适四载，壬寅盛夏，迟迟吾行；
+前尘影事，良师诤友，温澜潮生，铭感五内，一夕千念，报本反始；
+categories: 随笔
 tags:
-  - Typora
+  - 日常
   - Markdown
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
