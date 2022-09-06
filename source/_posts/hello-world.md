@@ -34,4 +34,4 @@ tags:
 ___
 
 ## 原图
-https://cdn.staticaly.com/gh/xys176/image-hosting@master/致谢.dgczlrley28.webp
+![图片alt](https://cdn.staticaly.com/gh/xys176/image-hosting@master/致谢.dgczlrley28.webp "致谢")
