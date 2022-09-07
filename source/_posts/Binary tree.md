@@ -20,7 +20,7 @@ tags:
 
 ## 二叉树链式结构的实现
 ### 定义二叉树
-```C++
+```
 typedef char BTDataType;
 
 typedef struct BinaryTreeNode
