@@ -283,7 +283,7 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: true
+  enable: false
   owner:
   repo:
   oauth:
@@ -295,11 +295,11 @@ gitalk:
 # Gitment 评论模块的配置，默认为不激活
 gitment:
   enable: true
-  owner:
-  repo:
+  owner: xys176
+  repo: blog-comment
   oauth:
-    clientId:
-    clientSecret:
+    clientId: 1c8440039e5471f6b677
+    clientSecret: fd4f05ec25735bea5433bfbaccc3fb1705834896
 
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
