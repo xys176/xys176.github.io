@@ -10,7 +10,8 @@ coverImg: https://cdn.staticaly.com/gh/xys176/image-hosting@master/QQ截图20220
 password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 toc: false
 mathjax: false
-summary: 数据结构学习二叉树部分
+summary: 树是一种非线性的数据结构，它是由n（n>=0）个有限结点组成一个具有层次关系的集合。把它叫做树是因
+为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。二叉树是所有的树种类中比较特殊的一类。
 categories: 数据结构
 tags:
   - Markdown
