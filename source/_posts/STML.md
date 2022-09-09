@@ -84,7 +84,7 @@ tags:
 ### 3. 组合为更新门且合并长时记忆
 整合长时和短期记忆，全部都需要依赖前一时刻的短期记忆。
 <div align=center>
-<img  src="https://cdn.staticaly.com/gh/xys176/image-hosting@master/image-(19).1gehkqruadi8.webp width="80%"/>   
+<img  src="https://cdn.staticaly.com/gh/xys176/image-hosting@master/image-(24).6n994o3w2qk0.webp" width="80%"/>   
 </div>
 
 ---

@@ -42,8 +42,11 @@ Attention机制通过每个时间输入不同的C，来解决眉毛胡子一把�
 1. 参数更少。
 2. 速度更快。
 3. 效果更好。想·
+
 核心思想就是通过加权求和，本质就是在不同的上下文中，专注不同的信息，因此无论是NLP，图像还是搜索，预测。使用Attention都有好的处理结果。
+
 ![应用图](https://cdn.staticaly.com/gh/xys176/image-hosting@master/image-(6).15298dmharts.webp)
+
 ## 解码编码 
 
 
