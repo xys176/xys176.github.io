@@ -13,7 +13,6 @@ mathjax: false
 summary: 长短期记忆网络（LSTM，Long Short-Term Memory）是一种时间循环神经网络，是为了解决一般的RNN（循环神经网络）存在的长期依赖问题而专门设计出来的，所有的RNN都具有一种重复神经网络模块的链式形式。
 categories: 人工智能
 tags:
-  - Markdown
   - 神经网络
 ---
 # 长短期记忆-LSTM

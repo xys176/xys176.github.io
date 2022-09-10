@@ -13,7 +13,6 @@ mathjax: false
 summary: 记录的是本科毕业致谢
 categories: 随笔
 tags:
-  - Markdown
   - 日常
 ---
 记录的是本科毕业致谢。

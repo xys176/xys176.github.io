@@ -13,7 +13,6 @@ mathjax: false
 summary: Attention is all you need，提出了解决sequence to sequence问题的transformer模型，该文章使用全Attention的结构代替了LSTM，抛弃了之前传统的encoder-decoder模型必须结合CNN或者RNN的固有模式。
 categories: 人工智能
 tags:
-  - Markdown
   - 神经网络
 ---
 ## 输入部分
