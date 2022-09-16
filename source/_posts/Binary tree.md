@@ -1,5 +1,5 @@
 ---
-title: 二叉树
+title: Binary Tree
 date: 2022-09-06 09:25:00
 author: XueYisheng
 img: https://cdn.staticaly.com/gh/xys176/image-hosting@master/QQ截图20220906223724.r3hz1ff4g2o.webp
