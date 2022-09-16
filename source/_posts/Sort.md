@@ -1,19 +1,19 @@
 ---
 title: Sort
-date: 2022-09-06 09:25:00
+date: 2022-09-16 15:25:00
 author: XueYisheng
-img: https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp
+img: https://s1.ax1x.com/2022/09/16/vzLAR1.jpg
 top: true
 hide: false
 cover: true
-coverImg: https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp
+coverImg: https://s1.ax1x.com/2022/09/16/vzLAR1.jpg
 password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 toc: false
 mathjax: false
 summary: 所谓排序，就是使一串记录，按照其中的某个或某些关键字的大小，递增或递减的排列起来的操作
-categories: 随笔
+categories: 数据结构
 tags:
-  - 日常
+  - 排序
 ---
 
 ## 1.排序的概念及其运用
@@ -135,7 +135,7 @@ void SelectSort(int* a, int n)
 		Swap(&a[begin], &a[mini]);
 
     //如果begin和maxi重叠，那么要修正一下maxi的位置
-    //即就是begin的位置就是最大值的位置
+    //即就是begin的位置就是最大值的位置，但之前begin位置的值已经和mini交换了，所以要把maxi再换回成mini的位置的值。
 		if (begin == maxi)
 		{
 			maxi = mini;
@@ -153,3 +153,201 @@ void SelectSort(int* a, int n)
 2. 时间复杂度：O(N^2)
 3. 空间复杂度：O(1)
 4. 稳定性：不稳定
+
+## 2.3 交换排序
+基本思想：所谓交换，就是根据序列中两个记录键值的比较结果来对换这两个记录在序列中的位置，交换排序的特点是：将键值较大的记录向序列的尾部移动，键值较小的记录向序列的前部移动。
+### 2.3.1冒泡排序
+```
+void BubbleSort(int* a, int n)
+{
+	assert(a);
+
+	for (int j = 0; j < n - 1; ++j)
+	{
+		int exchange = 0;
+		for (int i = 1; i < n - j; ++i)
+		{
+			if (a[i - 1] > a[i])
+			{
+				Swap(&a[i - 1], &a[i]);
+				exchange = 1;
+			}
+		}
+
+		if (exchange == 0)
+		{
+			break;
+		}
+	}
+}
+```
+冒泡排序的特性总结：
+1. 冒泡排序是一种非常容易理解的排序
+2. 时间复杂度：O(N^2) 
+3. 空间复杂度：O(1)
+4. 稳定性：稳定
+### 2.3.2 快速排序
+快速排序是Hoare于1962年提出的一种二叉树结构的交换排序方法，其基本思想为：任取待排序元素序列中的某元素作为基准值，按照该排序码将待排序集合分割成两子序列，左子序列中所有元素均小于基准值，右子序列中所有元素均大于基准值，然后最左右子序列重复该过程，直到所有元素都排列在相应位置上为止。  
+1. hoare版本   
+传统的右边先走，找大；左边先走，找小。顺序不能写反。
+```
+int PartSort1(int* a, int begin, int end)
+{
+	int left = begin, right = end;
+	int keyi = left;
+	while (left < right)
+	{
+		// 右边先走，找小
+        //注意这里一定加上等于，如果不加等于号，
+		//那么当左右两边数值相等时，就会死循环，因为交换之后两个数依旧是相等的。
+
+		while (left < right && a[right] >= a[keyi])
+		{
+			--right;
+		}
+
+		// 左边再走，找大
+		while (left < right && a[left] <= a[keyi])
+		{
+			++left;
+		}
+
+		Swap(&a[left], &a[right]);
+	}
+	Swap(&a[keyi], &a[left]);
+	keyi = left;
+	return keyi;
+}
+```
+加上left<right的判断，否则可能会越界访问，因为当等于的情况下
+还是有right--与left++，当key为最小值时，那么right向左移动直到
+与key相等，此时是数组最左边，那么经过right--，就会越界。再循环中要加上，left<right的判断。   
+
+2. 挖坑法
+先将第一个数据存放在临时变量key中，形成一个坑位。
+```
+int PartSort2(int* a, int begin, int end)
+{
+	int key = a[begin];
+	int pitI = begin;
+	while (begin < end)
+	{
+		//右边找小，填左边的坑.
+		while (begin < end && a[end] >= key)
+		{
+			end--;
+		}
+		a[pitI] = a[end];
+		pitI = end;
+		while (begin < end && a[begin] <= key)
+		{
+			begin++;
+		}
+		a[pitI] = a[begin];
+		pitI = begin;
+	}
+	a[pitI] = key;
+	return pitI;
+}
+```
+3. 前后指针版本
+```
+int PartSort3(int* a, int begin, int end)
+{
+	int prev = begin;
+	int cur = begin + 1;
+	int keyi = begin;
+
+	// 加入三数取中的优化
+	int midi = GetMidIndex(a, begin, end);
+	Swap(&a[keyi], &a[midi]);
+
+	while (cur <= end)
+	{ 
+		// cur位置的值小于keyi位置值
+		if (a[cur] < a[keyi] && ++prev != cur)
+			Swap(&a[prev], &a[cur]);
+
+		++cur;
+	}
+
+	Swap(&a[prev], &a[keyi]);
+	keyi = prev;
+
+	return keyi;
+}
+
+int GetMidIndex(int* a, int begin, int end)
+{
+	int mid = (begin + end) / 2;
+	if (a[begin] < a[mid])
+	{
+		if (a[mid] < a[end])
+		{
+			return mid;
+		}
+		else if (a[begin] < a[end])
+		{
+			return end;
+		}
+		else
+		{
+			return begin;
+		}
+	}
+```
+### 2.3.2 快速排序优化
+1. 三数取中法选key
+2. 递归到小的子区间时，可以考虑使用插入排序。C++的sort函数实现方法。
+```
+void QuickSort(int* a, int begin,int end)
+{
+	//当区间不存在或只有一个值
+	if (begin >= end)
+	{
+		return;
+	}
+	if (end - begin > 10)
+	{
+		int keyi = PartSort1(a, begin, end);
+		QuickSort(a, begin, keyi - 1);
+		QuickSort(a, keyi + 1, end);
+	}
+	else {
+		InsertSort(a + begin, end - begin + 1);
+	}
+}
+```
+### 2.3.2 快速排序非递归
+
+```
+void QuickSortNonR(int* a, int left, int right)
+{
+Stack st;
+StackInit(&st);
+StackPush(&st, left);
+StackPush(&st, right);
+while (StackEmpty(&st) != 0)
+{
+ right = StackTop(&st);
+ StackPop(&st);
+ left = StackTop(&st);
+ StackPop(&st);
+ 
+ if(right - left <= 1)
+ continue;
+ int div = PartSort1(a, left, right);
+ // 以基准值为分割点，形成左右两部分：[left, div) 和 [div+1, right)
+ StackPush(&st, div+1);
+ StackPush(&st, right);
+ 
+ StackPush(&st, left);
+ StackPush(&st, div);
+}
+ 
+ StackDestroy(&s);
+}
+```
+快速排序的特性总结：
+1. 快速排序整体的综合性能和使用场景都是比较好的，所以才敢叫快速排序
+2. 时间复杂度：O(N*logN)
