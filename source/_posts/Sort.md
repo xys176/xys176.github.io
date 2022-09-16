@@ -25,7 +25,7 @@ tags:
 ### 1.2 常见的排序算法
 
 
-<a href="https://imgse.com/i/vzhzr9"><img src="https://s1.ax1x.com/2022/09/16/vzhzr9.png" alt="vzhzr9.png" border="0" /></a>   
+<a href="https://imgse.com/i/vzhzr9"><img src="https://s1.ax1x.com/2022/09/16/vzhzr9.png" alt="排序归类" border="0" /></a>   
 
 其中基数排序是比较特殊的一类，它是分类拆开后按顺序合并，以此类推，反复几次。
 
@@ -34,7 +34,7 @@ tags:
 #### 2.1.1基本思想：
 直接插入排序是一种简单的插入排序法，其基本思想是：把待排序的记录按其关键码值的大小逐个插入到一个已经排好序的有序序列中，直到所有的记录插入完为止，得到一个新的有序序列。实际中我们玩扑克牌时，就用了插入排序的思想。
 
-<a href="https://imgse.com/i/vz4LdI"><img src="https://s1.ax1x.com/2022/09/16/vz4LdI.jpg" alt="vz4LdI.jpg" border="0" /></a>
+<a href="https://imgse.com/i/vz4LdI"><img src="https://s1.ax1x.com/2022/09/16/vz4LdI.jpg" alt="扑克牌示例" border="0" /></a>
 ```
 void InsertSort(int* a, int n)
 {
@@ -72,7 +72,7 @@ void InsertSort(int* a, int n)
 希尔排序法又称缩小增量法。希尔排序法的基本思想是：先选定一个整数，把待排序文件中所有记录分成个组，所有距离为的记录分在同一组内，并对每一组内的记录进行排序。然后，取重复上述分组和排序的工
 作。当到达=1时，所有记录在统一组内排好序。
 
-<a href="https://imgse.com/i/vzIFje"><img src="https://s1.ax1x.com/2022/09/16/vzIFje.png" alt="vzIFje.png" border="0" /></a> 
+<a href="https://imgse.com/i/vzIFje"><img src="https://s1.ax1x.com/2022/09/16/vzIFje.png" alt="希尔排序示例图" border="0" /></a> 
 
 ```
 //平均：O(N^1.3）
