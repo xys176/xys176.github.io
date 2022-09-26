@@ -1,0 +1,1231 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="二叉树(LeetCode练习题), xueyisheng&#39;s blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>二叉树(LeetCode练习题) | xueyisheng&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/tubiao.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.staticaly.com/gh/xys176/image-hosting@master/6d1ffde61ff84984a225945dd3383da0-(1).3a84fce4inq0.webp);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">xueyisheng&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">xueyisheng&#39;s blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xys176" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: rgb(049, 124, 183);
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xys176" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.staticaly.com/gh/xys176/image-hosting@master/QQ截图20220911222430.6nfcwg9lnmk0.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">二叉树(LeetCode练习题)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
+                            </a>
+                        
+                            <a href="/tags/LeetCode/">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-11
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-09-26
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="二叉树LeetCode联系（C语言）"><a href="#二叉树LeetCode联系（C语言）" class="headerlink" title="二叉树LeetCode联系（C语言）"></a>二叉树LeetCode联系（C语言）</h1><h2 id="965-单值二叉树"><a href="#965-单值二叉树" class="headerlink" title="965. 单值二叉树"></a>965. 单值二叉树</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/univalued-binary-tree/">https://leetcode.cn/problems/univalued-binary-tree/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     struct TreeNode *left;</span><br><span class="line"> *     struct TreeNode *right;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">bool isUnivalTree(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root-&gt;left &amp;&amp; root-&gt;left-&gt;val != root-&gt;val)</span><br><span class="line">    return false;</span><br><span class="line">    if(root-&gt;right &amp;&amp; root-&gt;right-&gt;val != root-&gt;val)</span><br><span class="line">    return false;</span><br><span class="line">    return isUnivalTree(root-&gt;left)&amp;&amp;isUnivalTree(root-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>二叉树中的判断，以判错作为返回条件更清晰。当root&#x3D;&#x3D;NULL时返回真。</li>
+<li>返回值中可以同时进行判断&amp;&amp;。</li>
+</ul>
+<hr>
+<h2 id="100-相同的树"><a href="#100-相同的树" class="headerlink" title="100. 相同的树"></a>100. 相同的树</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/same-tree/">https://leetcode.cn/problems/same-tree/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">bool isSameTree(struct TreeNode* p, struct TreeNode* q)&#123;</span><br><span class="line">    if(p == NULL &amp;&amp; q == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;else if(p == NULL &amp;&amp; q != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p != NULL &amp;&amp; q == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p-&gt;val != q-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    if(!isSameTree(p-&gt;left,q-&gt;left)) </span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    if(!isSameTree(p-&gt;right,q-&gt;right))</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>清楚判错的所有条件，不要漏掉情况</li>
+</ul>
+<hr>
+<h2 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101. 对称二叉树"></a>101. 对称二叉树</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">https://leetcode.cn/problems/symmetric-tree/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">bool isCompare(struct TreeNode* p,struct TreeNode* q)</span><br><span class="line">&#123;</span><br><span class="line">    if(p == NULL &amp;&amp; q == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;else if(p != NULL &amp;&amp; q == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if((p == NULL &amp;&amp; q != NULL))</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p-&gt;left!=NULL &amp;&amp; q-&gt;right!=NULL &amp;&amp; p-&gt;left &amp;&amp; p-&gt;left-&gt;val != q-&gt;right-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p-&gt;left == NULL &amp;&amp; q-&gt;right != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p-&gt;right == NULL &amp;&amp; q-&gt;left != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p-&gt;left != NULL &amp;&amp; q-&gt;right == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if(p-&gt;right != NULL &amp;&amp; q-&gt;left == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return isCompare(p-&gt;left,q-&gt;right) &amp;&amp; isCompare(p-&gt;right,q-&gt;left);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool isSymmetric(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return isCompare(root,root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104. 二叉树的最大深度"></a>104. 二叉树的最大深度</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">https://leetcode.cn/problems/maximum-depth-of-binary-tree/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int maxDepth(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">        return 0;</span><br><span class="line">    int leftD = maxDepth(root-&gt;left);</span><br><span class="line">    int rightD = maxDepth(root-&gt;right);</span><br><span class="line">    return leftD &gt; rightD ? leftD+1 : rightD+1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="572-另一棵树的子树"><a href="#572-另一棵树的子树" class="headerlink" title="572. 另一棵树的子树"></a>572. 另一棵树的子树</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subtree-of-another-tree/">https://leetcode.cn/problems/subtree-of-another-tree/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">bool Compare(struct TreeNode* root, struct TreeNode* subRoot)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL &amp;&amp; subRoot == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root == NULL &amp;&amp; subRoot !=NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root != NULL &amp;&amp; subRoot == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root != NULL &amp;&amp; subRoot != NULL &amp;&amp; root-&gt;val != subRoot-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return Compare(root-&gt;left,subRoot-&gt;left) &amp;&amp; Compare(root-&gt;right,subRoot-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool SubtreeCompare(struct TreeNode* root, struct TreeNode* subRoot)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root-&gt;val == subRoot-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        bool temp = Compare(root,subRoot);</span><br><span class="line">        if(temp == true)</span><br><span class="line">        return temp;</span><br><span class="line">    &#125;</span><br><span class="line">    return SubtreeCompare(root-&gt;left,subRoot) || SubtreeCompare(root-&gt;right,subRoot);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool isSubtree(struct TreeNode* root, struct TreeNode* subRoot)&#123;</span><br><span class="line">    if(subRoot == NULL)</span><br><span class="line">        return true;</span><br><span class="line">    //if(subRoot-&gt;val != root-&gt;val)</span><br><span class="line">    //    return false;</span><br><span class="line">    if(root == NULL &amp;&amp; subRoot != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return SubtreeCompare(root, subRoot);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="144-二叉树的前序遍历"><a href="#144-二叉树的前序遍历" class="headerlink" title="144. 二叉树的前序遍历"></a>144. 二叉树的前序遍历</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-preorder-traversal/">https://leetcode.cn/problems/binary-tree-preorder-traversal/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//前序遍历</span><br><span class="line">void PreOrder(struct TreeNode* root, int *array, int* pi)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    array[(*pi)++] = root-&gt;val;</span><br><span class="line">    PreOrder(root-&gt;left,array,pi);</span><br><span class="line">    PreOrder(root-&gt;right,array,pi);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> //得到数组的长度</span><br><span class="line"> int getLong(struct TreeNode* root)</span><br><span class="line"> &#123;</span><br><span class="line">     if(root == NULL)</span><br><span class="line">     &#123;</span><br><span class="line">         return 0;</span><br><span class="line">     &#125;</span><br><span class="line">     return getLong(root-&gt;left)+getLong(root-&gt;right) + 1;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">int* preorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    *returnSize = getLong(root);</span><br><span class="line">    int *array = (int*)malloc(*returnSize * sizeof(int));</span><br><span class="line">    int i = 0;</span><br><span class="line">    PreOrder(root,array,&amp;i);</span><br><span class="line">    return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这种在遍历的递归中有数组存在的，对数组的下标值访问，必须以指针地址的方式访问。才能保证每次都是在原来的基础上加一，如果不用指针，就会发生修改局部变量i，而没有修改上层中的i值。发生访问错误。</li>
+</ul>
+<h2 id="94-二叉树的中序遍历"><a href="#94-二叉树的中序遍历" class="headerlink" title="94. 二叉树的中序遍历"></a>94. 二叉树的中序遍历</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-inorder-traversal/">https://leetcode.cn/problems/binary-tree-inorder-traversal/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//中序遍历</span><br><span class="line">void InOrder(struct TreeNode* root,int* array,int* pi)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    InOrder(root-&gt;left,array,pi);</span><br><span class="line">    array[(*pi)++] = root-&gt;val;</span><br><span class="line">    InOrder(root-&gt;right,array,pi);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> //得到节点个数</span><br><span class="line"> int getLong(struct TreeNode* root)</span><br><span class="line"> &#123;</span><br><span class="line">     if(root == NULL)</span><br><span class="line">     &#123;</span><br><span class="line">         return 0;</span><br><span class="line">     &#125;</span><br><span class="line">     return getLong(root-&gt;left)+getLong(root-&gt;right)+1;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">int* inorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    *returnSize = getLong(root);</span><br><span class="line">    int* array = (int*)malloc(sizeof(int) * *returnSize);</span><br><span class="line">    int i = 0;</span><br><span class="line">    InOrder(root,array,&amp;i);</span><br><span class="line">    return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="145-二叉树的后序遍历"><a href="#145-二叉树的后序遍历" class="headerlink" title="145. 二叉树的后序遍历"></a>145. 二叉树的后序遍历</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-postorder-traversal/">https://leetcode.cn/problems/binary-tree-postorder-traversal/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//后序遍历</span><br><span class="line">void PostOrder(struct TreeNode* root,int* array,int* pi)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return ;</span><br><span class="line">    &#125;</span><br><span class="line">    PostOrder(root-&gt;left,array,pi);</span><br><span class="line">    PostOrder(root-&gt;right,array,pi);</span><br><span class="line">    array[(*pi)++] = root-&gt;val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//得到节点个数</span><br><span class="line">int getLong(struct TreeNode* root)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return getLong(root-&gt;left) + getLong(root-&gt;right) + 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* postorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    *returnSize = getLong(root);</span><br><span class="line">    int* array = (int*)malloc(sizeof(int) * *returnSize);</span><br><span class="line">    int i = 0;</span><br><span class="line">    PostOrder(root,array,&amp;i);</span><br><span class="line">    return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">XueYisheng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xys173.github.io/2022/09/11/Binary%20tree%202/">http://xys173.github.io/2022/09/11/Binary%20tree%202/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">XueYisheng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
+                                </a>
+                            
+                                <a href="/tags/LeetCode/">
+                                    <span class="chip bg-color">LeetCode</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.staticaly.com/gh/xys176/image-hosting@master/支付宝收款.1byacbtymlts.webp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.staticaly.com/gh/xys176/image-hosting@master/QQ截图20220906112515.6deonecvgs00.webp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Sun Sep 11 2022 22:02:00 GMT+0800',
+    owner: 'xys176',
+    repo: 'blog-comment',
+    oauth: {
+        client_id: '1c8440039e5471f6b677',
+        client_secret: 'fd4f05ec25735bea5433bfbaccc3fb1705834896'
+    }
+});
+
+gitment.render('gitment-content');
+</script>
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'http://xys173.github.io/2022/09/11/Binary%20tree%202/';
+        this.page.identifier = '/2022/09/11/Binary%20tree%202/';
+        this.page.title = '二叉树(LeetCode练习题)';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/09/16/Sort/">
+                    <div class="card-image">
+                        
+                        <img src="https://s1.ax1x.com/2022/09/16/vzLAR1.jpg" class="responsive-img" alt="Sort">
+                        
+                        <span class="card-title">Sort</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            所谓排序，就是使一串记录，按照其中的某个或某些关键字的大小，递增或递减的排列起来的操作
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/09/10/Postgraduate%20studies/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.staticaly.com/gh/xys176/image-hosting@master/QQ截图20220910141959.6lfocue2eik0.webp" class="responsive-img" alt="Get计算机硕士学位">
+                        
+                        <span class="card-title">Get计算机硕士学位</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            记录计算机硕士学位申请流程。Get计算机硕士学位。申请硕士学位全流程申请硕士学位各环节具体要求。1.申请学位学分修够，开题通过，中期检查通过。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BC%9A%E8%AE%AE/">
+                        <span class="chip bg-color">会议</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%A5%E5%B8%B8/">
+                        <span class="chip bg-color">日常</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+
+<!-- 代码块收缩 -->
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="704586047"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">xueyisheng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3102591761@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3102591761" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3102591761" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/bu-ju-zhe-7" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/bu-ju-zhe-7" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
