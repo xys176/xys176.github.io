@@ -23,18 +23,18 @@ menu:
     url: /friends
     icon: fas fa-address-book
   # 二级菜单写法如下
-  #Medias:
-  #  icon: fas fa-list
-  #  children:
-  #    - name: Musics
-  #      url: /musics
-  #      icon: fas fa-music
+  Medias:
+    icon: fas fa-list
+    children:
+      - name: Musics
+        url: /musics
+        icon: fas fa-music
   #    - name: Movies
   #      url: /movies
   #      icon: fas fa-film
-  #    - name: Books
-  #      url: /books
-  #      icon: fas fa-book
+      - name: Books
+        url: /books
+        icon: fas fa-book
   #    - name: Galleries
   #      url: /galleries
   #      icon: fas fa-image
@@ -64,8 +64,8 @@ cover:
 # index page dream text,
 # 配置首页显示"梦想"的语句.
 dream:
-  enable: true
-  showTitle: true
+  enable: false
+  showTitle: false
   title: 博主初衷
   text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
 
@@ -73,10 +73,10 @@ dream:
 # 是否在首页显示音乐.
 music:
   enable: true
-  title: #非吸底模式有效
+  title: 
     enable: true
     show: 听听音乐
-  autoHide: true    # hide automaticaly
+  autoHide: false    # hide automaticaly
   server: netease  #require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
   id: 704586047     #require	song id / playlist id / album id / search keyword
@@ -93,14 +93,14 @@ music:
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
-  enable: false
+  enable: true
   showTitle: true
   title: 精彩视频
-  url: # 必填
+  url: https://www.bilibili.com/video/BV1QV411s7ZW/?vd_source=cb99185c5018ba820e3cfcd3089d2a85&t=38.8
   pic:
   thumbnails:
-  height: # 如：400
-  autoplay: false # 是否自动播放
+  height: 400
+  autoplay: true # 是否自动播放
   theme: '#42b983'
   loop: false # 是否循环播放
   preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
